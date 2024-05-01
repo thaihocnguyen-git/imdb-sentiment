@@ -32,9 +32,14 @@ Do preprocess steps:
 
 
 
-## Model
+## Model and training
 
 To deal with the IMDB dataste propblem, go to finturing the pretrained Roberta Model from hugging-face, then add the additional Multilayer Neural Network for classification the text as ***positive*** or ***negative***
+
+After training 5 epochs we got the curve of loss and accuracy as the image below
+![Training result](asset/images/training_output.png)
+
+Accuracy on test dataset is about: 88%
 
 
 ## Installation
@@ -60,6 +65,9 @@ To deal with the IMDB dataste propblem, go to finturing the pretrained Roberta M
 5. Call API
 
     curl -X POST -H "Content-Type: Application/json" -d "{\"text\": \"This is the best film I have ever seen.\"}" http://localhost:5000/predict
+
+# Brief summary the steps of the project
+![Summrary step](asset/images/Sentiment%20analysis.drawio.png)
 
 
 # Time to complete
