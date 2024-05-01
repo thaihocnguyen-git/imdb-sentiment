@@ -1,0 +1,48 @@
+data:
+  preprocess:
+    - simple_preprocess
+  batch_size: 64
+
+  split:
+    - 0.8
+    - 0.2
+loss:
+  name: 'CrossEntropyLoss'
+  label_smoothing: 0.1
+optimizer:
+  name: 'Adam'
+  lr: 0.00005
+  weight_decay: 0
+
+architechture:
+  name: 'FacebookAI/roberta-base'
+  tokenizer:
+    max_length: 300
+  classifier:
+    num_labels: 2
+    hidden_dims:
+      - 256
+    dropout: 0.0
+
+training:
+  num_epoch: 5
+  print_every: 20
+  device: None
+  live_plot: True
+  save_path: best_model_v2.pt
+  model: None
+  criteria: None
+  optimizer: None
+  train_loader: None
+  validation_loader: None
+  metrics:
+    - Accuracy
+
+test:
+  ds_loader: None
+  metrics:
+    - Accuracy
+
+
+
+
