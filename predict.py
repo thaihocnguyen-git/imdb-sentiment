@@ -13,13 +13,13 @@ class ClassifyResult:
     label: str
     confidence: float
 
-def predict(text: str, model: Classifier) -> ClassifyResult:
+def predict(text: str, model: Classifier, device: str) -> ClassifyResult:
     tokens = model.tokenizer(
         [text],
         return_tensors='pt',
         padding='max_length', max_length=model.max_length)
     
-    pred = model(tokens['input_ids'], tokens['attention_mask'])
+    pred = model(tokens['input_ids'].to(device), tokens['attention_mask'].to(device))
     pred = F.softmax(pred)[0]
     idx = pred.argmax().item()
     confidence = pred[idx].item()

@@ -58,6 +58,8 @@ Accuracy on test dataset is about: 88%
 
 		pip install -r requirements.txt
 
+4. Download [model checkpoints](https://drive.google.com/file/d/1S2hEivPARb-Xj0xPd3Gm_Uddh49hcqOO/view?usp=sharing) to the project folder.
+
 4. Start flask app on http://localhost:5000
 
 		flask --app app run
@@ -66,8 +68,16 @@ Accuracy on test dataset is about: 88%
 
     curl -X POST -H "Content-Type: Application/json" -d "{\"text\": \"This is the best film I have ever seen.\"}" http://localhost:5000/predict
 
+Application after run:
+![Application running](asset/images/app_run.png)
+
+Sample result:
+![Sample API result](asset/images/sample_result.png)
+
 # Brief summary the steps of the project
 ![Summrary step](asset/images/Sentiment%20analysis.drawio.png)
+
+
 
 
 # Time to complete

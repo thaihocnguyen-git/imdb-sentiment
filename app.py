@@ -20,7 +20,7 @@ def predict():
     """Predict the sentence sent from post data."""
     text = request.json['text']
     text = simple_preprocess(text)
-    result = text_predict(text, MODEL)
+    result = text_predict(text, MODEL, DEVICE)
     return jsonify(result)
 
 if __name__ == '__main__':
