@@ -43,8 +43,7 @@ To deal with the IMDB dataste propblem, go to finturing the pretrained Roberta M
 1. [Install python 3](https://www.python.org/downloads/)
 2. Create virtual environment (optional)
 
-python3 -m venv <name_of_virtualenv>
-
+		python3 -m venv <name_of_virtualenv>
 	    [In cmd.exe]
 	    venv\Scripts\activate.bat
 	    [In PowerShell]

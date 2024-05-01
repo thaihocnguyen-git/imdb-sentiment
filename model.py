@@ -52,10 +52,10 @@ class Classifier(Module):
         self.max_length = max_length
         self.num_classes = num_classes
 
-    def load_checkpoint(self, ckpt_path: str) -> None:
+    def load_checkpoint(self, ckpt_path: str, device='cuda') -> None:
         """Load checkpoint from saved path is existed."""
         if os.path.exists(ckpt_path):
-            state_dict = torch.load(ckpt_path)
+            state_dict = torch.load(ckpt_path, map_location=torch.device(device))
             self.load_state_dict(state_dict)
             print(f'Loaded checkpoint from {ckpt_path}')
 
